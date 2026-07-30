@@ -1,185 +1,72 @@
-import { ProjectImage } from "@/app/components/ProjectImage";
+import Image from 'next/image';
 
-export default function Home() {
+export default function Page() {
   return (
-    <main style={{ maxWidth: "800px", margin: "0 auto", padding: "0 24px" }}>
-      {/* Hero */}
-      <section style={{ marginTop: "64px" }}>
-        <h1
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "64px",
-            lineHeight: "1.0",
-            letterSpacing: "-0.03em",
-            fontWeight: 700,
-            color: "var(--color-text-primary)",
-            overflowWrap: "anywhere",
-            minWidth: 0,
-            margin: 0,
-          }}
-        >
-          Bramble Coffee
-        </h1>
-        <p
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "18px",
-            lineHeight: "1.7",
-            color: "var(--color-text-muted)",
-            margin: "16px 0 0 0",
-          }}
-        >
+    <main className="max-w-[800px] mx-auto px-4 md:px-6 py-16 md:py-24 bg-[var(--color-bg)] min-h-screen">
+      {/* Hero Section */}
+      <section className="relative w-full mb-8">
+        <div className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden">
+          <Image
+            src="https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/test-run-bramble-coffee-card/cleo/1785451589236-hero-TEST-PLACEHOLDER.png"
+            alt="A ceramic cup of black coffee on a worn wooden counter"
+            fill
+            priority
+            className="object-cover"
+            sizes="(max-width: 800px) 100vw, 800px"
+          />
+          <h1 className="absolute bottom-6 left-6 text-[44px] md:text-[64px] font-bold leading-[1.0] tracking-[-0.03em] text-[var(--color-bg)] font-[var(--font-display)]">
+            Bramble Coffee
+          </h1>
+        </div>
+        <p className="mt-4 text-[18px] font-normal leading-[1.7] text-[var(--color-text-muted)] font-[var(--font-body)]">
           Good coffee, made carefully.
         </p>
-        <div style={{ marginTop: "32px" }}>
-          <ProjectImage id="hero" className="w-full h-auto" />
-        </div>
       </section>
 
-      {/* About */}
-      <section style={{ marginTop: "64px" }}>
-        <p
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "18px",
-            lineHeight: "1.7",
-            color: "var(--color-text-primary)",
-            margin: 0,
-          }}
-        >
+      {/* About Section */}
+      <section className="mb-16">
+        <p className="text-[18px] font-normal leading-[1.7] text-[var(--color-text-primary)] font-[var(--font-body)]">
           A cart, a grinder, and a reason to be here. We serve simple coffee from a wooden counter at the edge of the market. No rush, just the morning and a clean cup.
         </p>
       </section>
 
-      {/* Menu */}
-      <section style={{ marginTop: "64px" }}>
-        <h2
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "28px",
-            lineHeight: "1.2",
-            letterSpacing: "-0.01em",
-            fontWeight: 700,
-            color: "var(--color-text-primary)",
-            margin: "0 0 24px 0",
-          }}
-        >
-          Menu
-        </h2>
-        {[
-          { name: "Black Coffee", price: "4" },
-          { name: "Espresso", price: "3" },
-          { name: "Macchiato", price: "4" },
-          { name: "Flat White", price: "5" },
-        ].map((item) => (
-          <div
-            key={item.name}
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "baseline",
-              borderBottom: "1px solid var(--color-divider)",
-              padding: "16px 0",
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: "15px",
-                lineHeight: "1.5",
-                letterSpacing: "0.02em",
-                color: "var(--color-text-primary)",
-              }}
-            >
-              {item.name}
-            </span>
-            <span
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: "15px",
-                lineHeight: "1.5",
-                letterSpacing: "0.02em",
-                color: "var(--color-accent)",
-              }}
-            >
-              {item.price}
-            </span>
-          </div>
-        ))}
+      {/* Menu Section */}
+      <section className="bg-[var(--color-surface)] p-8 mb-16">
+        <div className="space-y-4">
+          {[
+            { name: 'Black Coffee', price: '4' },
+            { name: 'Espresso', price: '3' },
+            { name: 'Macchiato', price: '4' },
+            { name: 'Flat White', price: '5' },
+          ].map((item, i) => (
+            <div key={item.name}>
+              <div className="flex justify-between items-baseline py-2">
+                <span className="text-[18px] font-normal text-[var(--color-text-primary)] font-[var(--font-body)]">
+                  {item.name}
+                </span>
+                <span className="text-[15px] font-normal tracking-[0.02em] text-[var(--color-text-muted)] font-[var(--font-body)]">
+                  {item.price}
+                </span>
+              </div>
+              {i < 3 && <div className="h-[1px] bg-[var(--color-divider)] w-full" />}
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* Hours */}
-      <section style={{ marginTop: "64px" }}>
-        <h2
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "28px",
-            lineHeight: "1.2",
-            letterSpacing: "-0.01em",
-            fontWeight: 700,
-            color: "var(--color-text-primary)",
-            margin: "0 0 16px 0",
-          }}
-        >
-          Hours
-        </h2>
-        <p
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "15px",
-            lineHeight: "1.5",
-            letterSpacing: "0.02em",
-            color: "var(--color-text-primary)",
-            margin: "0 0 8px 0",
-          }}
-        >
-          Tuesday: Sunday
-        </p>
-        <p
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "15px",
-            lineHeight: "1.5",
-            letterSpacing: "0.02em",
-            color: "var(--color-text-primary)",
-            margin: 0,
-          }}
-        >
-          7am: 1pm
+      {/* Hours Section */}
+      <section className="mb-16">
+        <p className="text-[15px] font-normal tracking-[0.02em] text-[var(--color-text-muted)] font-[var(--font-body)]">
+          Tuesday–Sunday, 7am–1pm
         </p>
       </section>
 
-      {/* Footer */}
-      <footer
-        style={{
-          marginTop: "64px",
-          borderTop: "1px solid var(--color-divider)",
-          paddingTop: "24px",
-          paddingBottom: "64px",
-        }}
-      >
-        <p
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "14px",
-            lineHeight: "1.5",
-            letterSpacing: "0.03em",
-            color: "var(--color-text-muted)",
-            margin: "0 0 4px 0",
-          }}
-        >
+      {/* Footer Section */}
+      <footer className="border-t border-[var(--color-divider)] pt-8">
+        <p className="text-[14px] font-normal tracking-[0.03em] text-[var(--color-text-muted)] font-[var(--font-body)]">
           1242 Bramble Lane
         </p>
-        <p
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "14px",
-            lineHeight: "1.5",
-            letterSpacing: "0.03em",
-            color: "var(--color-text-muted)",
-            margin: 0,
-          }}
-        >
+        <p className="text-[14px] font-normal tracking-[0.03em] text-[var(--color-text-muted)] font-[var(--font-body)]">
           555-0124
         </p>
       </footer>

@@ -1,37 +1,28 @@
-import type { Metadata } from "next";
-import { Instrument_Serif, Lora } from "next/font/google";
-import "./globals.css";
+import { Instrument_Serif, Lora } from 'next/font/google';
+import './globals.css';
 
 const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  display: "swap",
-  weight: "700",
-  variable: "--font-display",
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-display',
 });
 
 const lora = Lora({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "700"],
-  variable: "--font-body",
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-body',
 });
 
-export const metadata: Metadata = {
-  title: "Bramble Coffee",
-  description: "Good coffee, made carefully.",
+export const metadata = {
+  title: 'Bramble Coffee',
+  description: 'Good coffee, made carefully.',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${instrumentSerif.variable} ${lora.variable}`}
-    >
-      <body>{children}</body>
+    <html lang="en" className={`${instrumentSerif.variable} ${lora.variable}`}>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
