@@ -1,76 +1,188 @@
-import Image from "next/image";
+import { ProjectImage } from "@/app/components/ProjectImage";
 
 export default function Home() {
   return (
-    <main className="bg-[var(--color-bg)] min-h-screen">
-      <div className="mx-auto max-w-[800px] px-[16px] md:px-[24px]">
-        {/* Hero section */}
-        <section className="pt-[64px] pb-[88px]">
-          <div className="relative aspect-[4/3] md:aspect-[16/9] w-full">
-            <Image
-              src="https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/test-run-bramble-coffee-card/cleo/1785451589236-hero-TEST-PLACEHOLDER.png"
-              alt="A ceramic cup of black coffee on a worn wooden counter"
-              fill
-              className="object-cover"
-              fetchPriority="high"
-              sizes="(max-width: 768px) 100vw, 800px"
-            />
-            <h1 className="absolute bottom-0 left-0 p-[24px] text-[44px] md:text-[64px] leading-[1.0] tracking-[-0.03em] font-[700] font-[family-name:var(--font-display)] text-[var(--color-bg)] overflow-wrap-anywhere min-w-0">
-              Bramble Coffee
-            </h1>
-          </div>
-          <p className="mt-[24px] font-[family-name:var(--font-body)] text-[18px] leading-[1.7] font-[400] text-[var(--color-text-muted)]">
-            Good coffee, made carefully.
-          </p>
-        </section>
+    <main style={{ maxWidth: "800px", margin: "0 auto", padding: "0 24px" }}>
+      {/* Hero */}
+      <section style={{ marginTop: "64px" }}>
+        <h1
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "64px",
+            lineHeight: "1.0",
+            letterSpacing: "-0.03em",
+            fontWeight: 700,
+            color: "var(--color-text-primary)",
+            overflowWrap: "anywhere",
+            minWidth: 0,
+            margin: 0,
+          }}
+        >
+          Bramble Coffee
+        </h1>
+        <p
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "18px",
+            lineHeight: "1.7",
+            color: "var(--color-text-muted)",
+            margin: "16px 0 0 0",
+          }}
+        >
+          Good coffee, made carefully.
+        </p>
+        <div style={{ marginTop: "32px" }}>
+          <ProjectImage id="hero" className="w-full h-auto" />
+        </div>
+      </section>
 
-        {/* About section */}
-        <section className="pb-[64px]">
-          <p className="font-[family-name:var(--font-body)] text-[18px] leading-[1.7] font-[400] text-[var(--color-text-primary)]">
-            A cart, a grinder, and a reason to be here. We serve simple coffee from a wooden counter at the edge of the market. No rush, just the morning and a clean cup.
-          </p>
-        </section>
+      {/* About */}
+      <section style={{ marginTop: "64px" }}>
+        <p
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "18px",
+            lineHeight: "1.7",
+            color: "var(--color-text-primary)",
+            margin: 0,
+          }}
+        >
+          A cart, a grinder, and a reason to be here. We serve simple coffee from a wooden counter at the edge of the market. No rush, just the morning and a clean cup.
+        </p>
+      </section>
 
-        {/* Menu section */}
-        <section className="bg-[var(--color-surface)] px-[24px] py-[32px] mb-[64px]">
-          <div className="flex justify-between items-center py-[12px]">
-            <span className="font-[family-name:var(--font-body)] text-[18px] font-[400] text-[var(--color-text-primary)]">Black Coffee</span>
-            <span className="font-[family-name:var(--font-body)] text-[15px] font-[400] tracking-[0.02em] text-[var(--color-text-muted)]">4</span>
+      {/* Menu */}
+      <section style={{ marginTop: "64px" }}>
+        <h2
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "28px",
+            lineHeight: "1.2",
+            letterSpacing: "-0.01em",
+            fontWeight: 700,
+            color: "var(--color-text-primary)",
+            margin: "0 0 24px 0",
+          }}
+        >
+          Menu
+        </h2>
+        {[
+          { name: "Black Coffee", price: "4" },
+          { name: "Espresso", price: "3" },
+          { name: "Macchiato", price: "4" },
+          { name: "Flat White", price: "5" },
+        ].map((item) => (
+          <div
+            key={item.name}
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "baseline",
+              borderBottom: "1px solid var(--color-divider)",
+              padding: "16px 0",
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "15px",
+                lineHeight: "1.5",
+                letterSpacing: "0.02em",
+                color: "var(--color-text-primary)",
+              }}
+            >
+              {item.name}
+            </span>
+            <span
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "15px",
+                lineHeight: "1.5",
+                letterSpacing: "0.02em",
+                color: "var(--color-accent)",
+              }}
+            >
+              {item.price}
+            </span>
           </div>
-          <hr className="border-0 h-[1px] bg-[var(--color-divider)]" />
-          <div className="flex justify-between items-center py-[12px]">
-            <span className="font-[family-name:var(--font-body)] text-[18px] font-[400] text-[var(--color-text-primary)]">Espresso</span>
-            <span className="font-[family-name:var(--font-body)] text-[15px] font-[400] tracking-[0.02em] text-[var(--color-text-muted)]">3</span>
-          </div>
-          <hr className="border-0 h-[1px] bg-[var(--color-divider)]" />
-          <div className="flex justify-between items-center py-[12px]">
-            <span className="font-[family-name:var(--font-body)] text-[18px] font-[400] text-[var(--color-text-primary)]">Macchiato</span>
-            <span className="font-[family-name:var(--font-body)] text-[15px] font-[400] tracking-[0.02em] text-[var(--color-text-muted)]">4</span>
-          </div>
-          <hr className="border-0 h-[1px] bg-[var(--color-divider)]" />
-          <div className="flex justify-between items-center py-[12px]">
-            <span className="font-[family-name:var(--font-body)] text-[18px] font-[400] text-[var(--color-text-primary)]">Flat White</span>
-            <span className="font-[family-name:var(--font-body)] text-[15px] font-[400] tracking-[0.02em] text-[var(--color-text-muted)]">5</span>
-          </div>
-        </section>
+        ))}
+      </section>
 
-        {/* Hours section */}
-        <section className="pb-[64px]">
-          <p className="font-[family-name:var(--font-body)] text-[15px] font-[400] tracking-[0.02em] text-[var(--color-text-muted)]">
-            Tuesday–Sunday, 7am–1pm
-          </p>
-        </section>
+      {/* Hours */}
+      <section style={{ marginTop: "64px" }}>
+        <h2
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "28px",
+            lineHeight: "1.2",
+            letterSpacing: "-0.01em",
+            fontWeight: 700,
+            color: "var(--color-text-primary)",
+            margin: "0 0 16px 0",
+          }}
+        >
+          Hours
+        </h2>
+        <p
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "15px",
+            lineHeight: "1.5",
+            letterSpacing: "0.02em",
+            color: "var(--color-text-primary)",
+            margin: "0 0 8px 0",
+          }}
+        >
+          Tuesday: Sunday
+        </p>
+        <p
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "15px",
+            lineHeight: "1.5",
+            letterSpacing: "0.02em",
+            color: "var(--color-text-primary)",
+            margin: 0,
+          }}
+        >
+          7am: 1pm
+        </p>
+      </section>
 
-        {/* Footer */}
-        <footer className="pb-[64px]">
-          <p className="font-[family-name:var(--font-body)] text-[14px] font-[400] tracking-[0.03em] text-[var(--color-text-muted)]">
-            1242 Bramble Lane
-          </p>
-          <p className="font-[family-name:var(--font-body)] text-[14px] font-[400] tracking-[0.03em] text-[var(--color-text-muted)]">
-            555-0124
-          </p>
-        </footer>
-      </div>
+      {/* Footer */}
+      <footer
+        style={{
+          marginTop: "64px",
+          borderTop: "1px solid var(--color-divider)",
+          paddingTop: "24px",
+          paddingBottom: "64px",
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "14px",
+            lineHeight: "1.5",
+            letterSpacing: "0.03em",
+            color: "var(--color-text-muted)",
+            margin: "0 0 4px 0",
+          }}
+        >
+          1242 Bramble Lane
+        </p>
+        <p
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "14px",
+            lineHeight: "1.5",
+            letterSpacing: "0.03em",
+            color: "var(--color-text-muted)",
+            margin: 0,
+          }}
+        >
+          555-0124
+        </p>
+      </footer>
     </main>
   );
 }
