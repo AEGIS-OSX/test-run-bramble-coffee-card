@@ -1,37 +1,37 @@
 {
   "logo": {
-    "url": "",
-    "alt": "",
+    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/test-run-bramble-coffee-card/cleo/1785451600796-logo-TEST-PLACEHOLDER.png",
+    "alt": "A minimalist vector logo mark featuring a geometric bramble branch and the product name in the locked brand colors. It establishes a tactile, unhurried identity that feels found rather than forced.\n\nD",
     "width": 1024,
     "height": 1024
   },
   "hero": {
-    "url": "",
-    "alt": "",
+    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/test-run-bramble-coffee-card/cleo/1785451589236-hero-TEST-PLACEHOLDER.png",
+    "alt": "A quiet, tactile shot of a ceramic cup of black coffee on a weathered wooden surface, utilizing natural side-lighting to emphasize texture and presence. The composition leaves the right third open for",
     "width": 1920,
     "height": 1080
   },
   "feature_1": {
-    "url": "",
-    "alt": "",
+    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/test-run-bramble-coffee-card/cleo/1785451589448-feature_1-TEST-PLACEHOLDER.png",
+    "alt": "A quiet, early morning scene featuring a simple ceramic cup of black coffee on a weathered wooden counter, utilizing natural light and a restricted warm palette to evoke a tactile, unhurried atmospher",
     "width": 800,
     "height": 600
   },
   "feature_2": {
-    "url": "",
-    "alt": "",
+    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/test-run-bramble-coffee-card/cleo/1785451588607-feature_2-TEST-PLACEHOLDER.png",
+    "alt": "A quiet, unhurried shot of a ceramic cup on a weathered wooden counter, capturing the tactile and present energy of a morning coffee cart. The composition provides ample negative space on the right fo",
     "width": 800,
     "height": 600
   },
   "feature_3": {
-    "url": "",
-    "alt": "",
+    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/test-run-bramble-coffee-card/cleo/1785451588728-feature_3-TEST-PLACEHOLDER.png",
+    "alt": "A quiet, unhurried shot of a ceramic cup on a weathered wooden counter, capturing the tactile and present energy of Bramble Coffee. The composition provides ample negative space for the left-aligned t",
     "width": 800,
     "height": 600
   },
   "social_proof": {
-    "url": "",
-    "alt": "",
+    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/test-run-bramble-coffee-card/cleo/1785451609832-social_proof-TEST-PLACEHOLDER.png",
+    "alt": "A quiet, tactile close-up of a ceramic saucer and silver spoon on a weathered wooden surface, capturing the unhurried morning atmosphere of the cart.\n\nDEFENSE:\n- CHOICE: A minimalist composition focus",
     "width": 1200,
     "height": 800
   }
